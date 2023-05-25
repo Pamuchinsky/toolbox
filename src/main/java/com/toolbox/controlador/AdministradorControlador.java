@@ -12,8 +12,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.toolbox.modelo.Administrador;
+import com.toolbox.modelo.Articulo;
+
 import com.toolbox.modelo.Docente;
 import com.toolbox.servicio.AdministradorServicio;
+import com.toolbox.servicio.ArticuloServicio;
 import com.toolbox.servicio.DocenteServicio;
 
 import jakarta.servlet.http.HttpServletRequest;
@@ -31,6 +34,9 @@ public class AdministradorControlador {
 	
 	@Autowired
 	private DocenteServicio docenteService;
+
+	@Autowired
+	private ArticuloServicio articuloService;
 	
 	
 	
@@ -94,12 +100,13 @@ public class AdministradorControlador {
 	public String elPerfil(HttpServletRequest request, Model model) {
 		int admin_id = (int) request.getSession().getAttribute("admin_id");
  
-		
+		List<Articulo> art = articuloService.getAll();
 		List<Docente> doc = docenteService.getAll();
 		
 		Administrador adm = this.administradorService.get(admin_id);
 		model.addAttribute("docentes", doc);
 		model.addAttribute("admin",adm);
+		model.addAttribute("articulos", art);
 		return "perfil";
 	}
 	
@@ -109,5 +116,5 @@ public class AdministradorControlador {
 
 
 
-	
+
 }

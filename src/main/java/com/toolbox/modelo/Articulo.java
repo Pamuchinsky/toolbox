@@ -5,31 +5,28 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="articulo")
+@Table(name = "articulo")
 public class Articulo {
 
-
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	
+
 	@Column
 	private String nombre;
-	
+
 	@Column
 	private String categoria;
-	
 
-	@Column
+	@Column(length = 1000)
 	private String seccion_a;
-	
 
-	@Column
+	@Column(length = 1000)
 	private String seccion_b;
-	
 
 	@Column
 	private String imagen;
@@ -37,11 +34,6 @@ public class Articulo {
 	@Column
 	private String link;
 
-
-
-
-
-	
 	public Articulo(Integer id, String nombre, String categoria, String seccion_a, String seccion_b, String imagen,
 			String link) {
 		this.id = id;
@@ -53,9 +45,6 @@ public class Articulo {
 		this.link = link;
 	}
 
-
-
-	
 	public Articulo(String nombre, String categoria, String seccion_a, String seccion_b, String imagen, String link) {
 		this.nombre = nombre;
 		this.categoria = categoria;
@@ -65,16 +54,9 @@ public class Articulo {
 		this.link = link;
 	}
 
-
-	
-
-
 	public Articulo() {
 
 	}
-
-
-
 
 	public Integer getId() {
 		return id;
@@ -131,10 +113,5 @@ public class Articulo {
 	public void setLink(String link) {
 		this.link = link;
 	}
-	
 
-	
-	
-
-	
 }

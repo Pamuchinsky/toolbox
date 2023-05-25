@@ -35,7 +35,7 @@ public class ArticuloServicioImp extends GenericServiceImp<Articulo, Integer> im
 	@Override
 	public CrudRepository<Articulo, Integer> getDao() {
 		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'getDao'");
+		return repositorioArticulo;
 	}
 	
 
