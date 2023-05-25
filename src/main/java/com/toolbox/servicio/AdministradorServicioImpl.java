@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import com.toolbox.generico.GenericServiceImp;
 import com.toolbox.modelo.Administrador;
-import com.toolbox.modelo.Docente;
 import com.toolbox.repositorio.RepositorioAdministrador;
 
 
