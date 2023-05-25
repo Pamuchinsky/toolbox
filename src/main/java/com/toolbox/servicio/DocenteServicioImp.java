@@ -1,15 +1,11 @@
 package com.toolbox.servicio;
 
-import java.io.Serializable;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
 
 import com.toolbox.generico.GenericServiceImp;
-import com.toolbox.modelo.Administrador;
 import com.toolbox.modelo.Docente;
-import com.toolbox.repositorio.RepositorioAdministrador;
 import com.toolbox.repositorio.RepositorioDocente;
 
 
